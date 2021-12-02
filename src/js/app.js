@@ -4,7 +4,7 @@ import Message from './Message';
 
 let newMessages = [];
 let lastTimestamp = null;
-const url = 'http://localhost:7070/?method=messages/unread';
+const url = 'https://rxjs-back.herokuapp.com/?method=messages/unread';
 let subscription;
 
 setInterval(() => {
