@@ -1,0 +1,29 @@
+body {
+  color: rgb(71, 70, 70);
+  padding: 30px;
+}
+
+.messageDiv {
+  display: flex;
+  font-size: 20px;
+  padding: 7px;
+  border: 1px solid black;
+}
+
+.messageDiv:nth-child(n + 2) {
+  border-top: none;
+}
+
+.messageFrom {
+  width: 40%;
+}
+
+.messageTime {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.messageSubject {
+  margin-left: 20px;
+  margin-right: 20px;
+}
