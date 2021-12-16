@@ -10,19 +10,20 @@ const url = 'https://rxjs-back.herokuapp.com/?method=messages/unread';
 let subscription;
 
 const data$ = interval(5000).pipe(
-  switchMap(ajax.getJSON(`${url}&time=${lastTimestamp}`)));
+  switchMap(ajax.getJSON(`${url}&time=${lastTimestamp}`)),
+);
 data$.subscribe(
-    (res) => {
-            console.log(res);
-            newMessages = res.messages;
-            lastTimestamp = res.timestamp;
-            newMessages.forEach((item) => {
-              const msg = new Message(item);
-              msg.addMessageToDOM();
-            });
-          },
-          (err) => console.error(err),
-  )
+  (res) => {
+    console.log(res);
+    newMessages = res.messages;
+    lastTimestamp = res.timestamp;
+    newMessages.forEach((item) => {
+      const msg = new Message(item);
+      msg.addMessageToDOM();
+    });
+  },
+  (err) => console.error(err),
+);
 
 // setInterval(() => {
 //   const urlWithTime = `${url}&time=${lastTimestamp}`;
